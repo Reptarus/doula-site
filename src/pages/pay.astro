@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Make a Payment | [Name] Doula">
+
+  <section class="pay-page">
+    <div class="pay-inner">
+      <div class="section-header">
+        <div class="eyebrow">Payments</div>
+        <h1 class="section-title">Make a Payment</h1>
+        <p class="pay-subtitle">
+          Secure online payments through Stripe. Choose the option that works best for you.
+        </p>
+      </div>
+
+      <!--
+        =========================================================
+        STRIPE PAYMENT LINKS — SETUP INSTRUCTIONS
+        =========================================================
+        1. Create a Stripe account at https://stripe.com
+        2. Go to Payment Links in the Stripe dashboard
+        3. Create a payment link for each option below
+        4. Replace the href="#" with your actual Stripe payment link URLs
+        5. Stripe handles all the checkout UI, receipts, and security
+        =========================================================
+      -->
+
+      <div class="pay-grid">
+        <a href="#" class="pay-card">
+          <div class="pay-icon">💳</div>
+          <h3>Pay Invoice</h3>
+          <p>Received an invoice? Click here to pay the balance due on your account.</p>
+          <span class="pay-link">Pay Now →</span>
+        </a>
+
+        <a href="#" class="pay-card">
+          <div class="pay-icon">📋</div>
+          <h3>Payment Plan</h3>
+          <p>Making a scheduled installment? Select your package and pay your next installment.</p>
+          <span class="pay-link">Make Payment →</span>
+        </a>
+      </div>
+
+      <div class="pay-grid pay-grid-single">
+        <a href="#" class="pay-card">
+          <div class="pay-icon">🎁</div>
+          <h3>Gift Certificate</h3>
+          <p>Give the gift of doula support. Purchase a gift certificate for an expecting family.</p>
+          <span class="pay-link">Purchase Gift →</span>
+        </a>
+      </div>
+
+      <div class="pay-security">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity: 0.6;">
+          <path d="M8 1L2 4v4c0 3.5 2.5 6.4 6 7 3.5-.6 6-3.5 6-7V4L8 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M6 8l1.5 1.5L10 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        All payments are securely processed by Stripe. We never see or store your card details.
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .pay-page {
+    background: var(--color-warm-white);
+    min-height: calc(100vh - var(--header-height, 72px));
+  }
+  .pay-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 48px 80px;
+  }
+  .pay-subtitle {
+    font-size: 16px;
+    color: var(--color-warm-gray);
+    margin-top: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .pay-grid-single {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+  }
+
+  .pay-card {
+    display: block;
+    background: var(--color-warm-white);
+    border: 1px solid var(--color-light-gray);
+    padding: 32px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .pay-card:hover {
+    border-color: var(--color-sage-light);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+  .pay-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .pay-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--color-charcoal);
+  }
+  .pay-card p {
+    font-size: 14px;
+    color: var(--color-warm-gray);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .pay-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-sage-dark);
+    letter-spacing: 0.04em;
+  }
+
+  .pay-security {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--color-warm-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .pay-inner {
+      padding: 48px 24px;
+    }
+    .pay-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

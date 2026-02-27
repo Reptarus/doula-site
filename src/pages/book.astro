@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Book a Consultation | [Name] Doula">
+
+  <section class="booking-page">
+    <div class="booking-inner">
+      <div class="section-header">
+        <div class="eyebrow">Schedule</div>
+        <h1 class="section-title">Book a Consultation</h1>
+        <p class="booking-subtitle">
+          Choose a time that works for you. I'll send a confirmation with a link
+          to our video call or details for an in-person meeting.
+        </p>
+      </div>
+
+      <div class="cal-embed">
+        <!--
+          =========================================================
+          CAL.COM EMBED — REPLACE THIS BLOCK
+          =========================================================
+          1. Sign up at https://cal.com (free tier)
+          2. Create an event type called "Free Consultation" (30 min)
+          3. Connect your Google Calendar
+          4. Replace the placeholder below with:
+
+          <div id="my-cal-inline"></div>
+          <script type="text/javascript">
+            (function (C, A, L) {
+              let p = function (a, ar) { a.q.push(ar); };
+              let d = C.document;
+              C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                  cal.ns = {};
+                  cal.q = cal.q || [];
+                  d.head.appendChild(d.createElement("script")).src = A;
+                  cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                  const api = function () { p(api, arguments); };
+                  const namespace = ar[1];
+                  api.q = api.q || [];
+                  typeof namespace === "string"
+                    ? (cal.ns[namespace] = api) && p(api, ar)
+                    : p(cal, ar);
+                  return;
+                }
+                p(cal, ar);
+              };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+
+            Cal("init", {origin:"https://cal.com"});
+            Cal("inline", {
+              elementOrSelector:"#my-cal-inline",
+              calLink:"YOUR-USERNAME/consultation",
+              layout:"month_view"
+            });
+            Cal("ui", {
+              styles: { branding: { brandColor: "#8B9E7E" }},
+              hideEventTypeDetails: false,
+              layout: "month_view"
+            });
+          </script>
+
+          =========================================================
+        -->
+        <div class="cal-placeholder">
+          <div class="cal-icon">📅</div>
+          <h3>Cal.com Scheduling Widget</h3>
+          <p>
+            When you set up your Cal.com account, the scheduling calendar
+            will appear here. Clients pick a date and time, fill in their
+            info, and it automatically books on your Google Calendar.
+          </p>
+          <code>&lt;!-- Replace with Cal.com embed code --&gt;</code>
+        </div>
+      </div>
+
+      <div class="booking-info">
+        <div class="info-card">
+          <h4>What to Expect</h4>
+          <p>
+            Our free discovery call is a casual, no-pressure conversation.
+            We'll talk about your birth goals, answer any questions you have,
+            and see if we're a good fit to work together.
+          </p>
+        </div>
+        <div class="info-card">
+          <h4>Before Your Call</h4>
+          <p>
+            Think about what matters most to you for your birth experience.
+            There are no wrong answers — just an honest conversation about
+            how I can support you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .booking-page {
+    background: var(--color-warm-white);
+    min-height: calc(100vh - var(--header-height, 72px));
+  }
+  .booking-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 48px 80px;
+  }
+  .booking-subtitle {
+    font-size: 16px;
+    color: var(--color-warm-gray);
+    margin-top: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Cal.com placeholder */
+  .cal-embed {
+    margin-top: 48px;
+  }
+  .cal-placeholder {
+    background: var(--color-cream);
+    border: 2px dashed var(--color-light-gray);
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .cal-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  .cal-placeholder h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--color-charcoal);
+  }
+  .cal-placeholder p {
+    font-size: 14px;
+    color: var(--color-warm-gray);
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .cal-placeholder code {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    background: var(--color-warm-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: var(--color-sage-dark);
+  }
+
+  /* Info cards */
+  .booking-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .info-card {
+    padding: 24px;
+    background: var(--color-cream);
+    border: 1px solid var(--color-light-gray);
+  }
+  .info-card h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--color-charcoal);
+  }
+  .info-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-warm-gray);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .booking-inner {
+      padding: 48px 24px;
+    }
+    .booking-info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

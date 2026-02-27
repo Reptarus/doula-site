@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services & Pricing | [Name] Doula">
+
+  <section class="services-hero">
+    <div class="section-header">
+      <div class="eyebrow">Services &amp; Pricing</div>
+      <h1 class="section-title">How I Can Support You</h1>
+    </div>
+  </section>
+
+  <section class="services-list">
+    <div class="services-inner">
+
+      <!-- TODO: Update service details with real offerings and pricing -->
+      <div class="service-item">
+        <div class="service-info">
+          <h2>Full-Spectrum Birth Doula Package</h2>
+          <p>
+            Comprehensive support from pregnancy through the postpartum period.
+            This is the most popular package for first-time and experienced parents alike.
+          </p>
+          <ul>
+            <li>2–3 prenatal visits (in-home or virtual)</li>
+            <li>On-call 24/7 from 38 weeks</li>
+            <li>Continuous labor &amp; delivery support</li>
+            <li>Birth plan creation assistance</li>
+            <li>1 postpartum visit within 2 weeks</li>
+            <li>Unlimited text/call support throughout</li>
+          </ul>
+        </div>
+        <div class="service-pricing">
+          <div class="amount">$X,XXX</div>
+          <div class="note">Payment plans available</div>
+          <a href="/book" class="btn btn-primary btn-sm">Book Consultation</a>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <h2>Postpartum Doula Support</h2>
+          <p>
+            In-home support during the vulnerable fourth trimester. Help with
+            newborn care, feeding, and maternal recovery.
+          </p>
+          <ul>
+            <li>Daytime or overnight availability</li>
+            <li>Newborn care &amp; soothing techniques</li>
+            <li>Breastfeeding / feeding support</li>
+            <li>Light meal prep &amp; household help</li>
+            <li>Emotional support &amp; resources</li>
+          </ul>
+        </div>
+        <div class="service-pricing">
+          <div class="amount">$XX/hr</div>
+          <div class="note">4-hour minimum</div>
+          <a href="/book" class="btn btn-primary btn-sm">Book Consultation</a>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <h2>Free Discovery Call</h2>
+          <p>
+            Not sure if a doula is right for you? Let's chat. No pressure,
+            no commitment — just a conversation about your birth goals
+            and how I might help.
+          </p>
+          <ul>
+            <li>30-minute video or phone call</li>
+            <li>Ask anything — no question is too small</li>
+            <li>Learn about what doula support looks like</li>
+          </ul>
+        </div>
+        <div class="service-pricing">
+          <div class="amount">Free</div>
+          <div class="note">30 minutes</div>
+          <a href="/book" class="btn btn-primary btn-sm">Schedule Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="section-header">
+      <div class="eyebrow">Questions</div>
+      <h2 class="section-title">Frequently Asked</h2>
+    </div>
+    <div class="faq-list">
+      <!-- TODO: Replace with real FAQs -->
+      <details class="faq-item">
+        <summary>What exactly does a doula do?</summary>
+        <p>
+          A doula provides continuous physical, emotional, and informational support
+          during pregnancy, labor, and the postpartum period. I'm not a medical
+          provider — I work alongside your OB or midwife to ensure you feel
+          supported, informed, and empowered throughout your experience.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need a doula if I already have a midwife?</summary>
+        <p>
+          Absolutely! While midwives provide medical care, a doula focuses
+          exclusively on your comfort and emotional well-being. Your midwife
+          may need to step out or attend to clinical tasks — I never leave your side.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm planning a cesarean birth?</summary>
+        <p>
+          Doula support is incredibly valuable for cesarean births! I can help you
+          prepare mentally, advocate for a gentle cesarean experience, and provide
+          crucial postpartum support during your recovery.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer payment plans?</summary>
+        <p>
+          Yes! I understand that growing your family is a significant investment.
+          I offer flexible payment plans so that cost is never a barrier to
+          receiving the support you deserve. We'll work something out.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>What areas do you serve?</summary>
+        <p>
+          I serve families in Marysville, Everett, Lake Stevens, Arlington,
+          and greater Snohomish County. I'm also available for virtual
+          consultations and postpartum support beyond this area.
+        </p>
+      </details>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .services-hero {
+    background: var(--color-warm-white);
+    padding: 64px 48px 48px;
+  }
+
+  .services-list {
+    background: var(--color-warm-white);
+  }
+  .services-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-light-gray);
+    align-items: start;
+  }
+  .service-item:last-child { border-bottom: none; }
+
+  .service-item h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .service-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-warm-gray);
+    font-weight: 300;
+  }
+  .service-item ul {
+    margin-top: 16px;
+    padding-left: 20px;
+    list-style: disc;
+    font-size: 14px;
+    color: var(--color-warm-gray);
+    line-height: 1.9;
+  }
+
+  .service-pricing {
+    text-align: right;
+    white-space: nowrap;
+    min-width: 180px;
+  }
+  .service-pricing .amount {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--color-sage-dark);
+  }
+  .service-pricing .note {
+    font-size: 13px;
+    color: var(--color-warm-gray);
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+  .btn-sm {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-cream);
+  }
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: 20px 0;
+  }
+  .faq-item summary {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--color-charcoal);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 24px;
+    color: var(--color-sage);
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-warm-gray);
+    font-weight: 300;
+    padding-top: 12px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .service-item {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .service-pricing {
+      text-align: left;
+    }
+    .services-inner {
+      padding: 0 24px 48px;
+    }
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">[Name] Doula</div>
+    <nav class="footer-links">
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/book">Book</a>
+      <a href="/pay">Pay</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; {year} [Name] Doula Services &bull; Marysville, WA</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-charcoal);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 48px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover {
+    color: var(--color-sage-light);
+  }
+</style>

@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | [Name] Doula">
+
+  <section class="contact-page">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Get in Touch</div>
+        <h1>Let's Connect</h1>
+        <p>
+          Whether you're just starting to think about doula support or you're
+          ready to book, I'd love to hear from you. No question is too small.
+        </p>
+
+        <!-- TODO: Replace with real contact info -->
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span>hello@yourdomain.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>(360) XXX-XXXX</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Serving Marysville, Everett &amp; Snohomish County</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📸</span>
+            <!-- TODO: Replace with real Instagram handle -->
+            <a href="https://instagram.com/yourbusiness" target="_blank" rel="noopener">
+              @yourbusiness
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <!--
+          =========================================================
+          CONTACT FORM — SETUP OPTIONS
+          =========================================================
+          Option A: Formspree (easiest, free tier = 50 submissions/month)
+            1. Sign up at https://formspree.io
+            2. Create a new form
+            3. Replace the action URL below with your Formspree endpoint
+
+          Option B: Web3Forms (free, unlimited submissions)
+            1. Get an access key at https://web3forms.com
+            2. Add the hidden input with your access key
+
+          Option C: Cloudflare Pages Function (free, most control)
+            - I can set this up for you — requires a small serverless function
+          =========================================================
+        -->
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="due-date">Due Date (approximate)</label>
+            <input type="text" id="due-date" name="due_date" placeholder="MM / YYYY">
+          </div>
+
+          <div class="form-group">
+            <label for="service">What are you interested in?</label>
+            <select id="service" name="service">
+              <option value="birth-doula">Birth Doula Package</option>
+              <option value="postpartum">Postpartum Support</option>
+              <option value="consultation">Free Consultation</option>
+              <option value="questions">Just have questions</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell me a little about yourself and what you're looking for..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-page {
+    background: var(--color-warm-white);
+    min-height: calc(100vh - var(--header-height, 72px));
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 48px;
+  }
+
+  .contact-info h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+  .contact-info p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-warm-gray);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--color-charcoal);
+  }
+  .contact-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .contact-item a {
+    color: var(--color-sage-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-item a:hover {
+    color: var(--color-sage);
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-warm-gray);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    border: 1px solid var(--color-light-gray);
+    background: var(--color-warm-white);
+    color: var(--color-charcoal);
+    transition: border-color 0.2s;
+    outline: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--color-sage);
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      padding: 48px 24px;
+      gap: 40px;
+    }
+  }
+</style>
